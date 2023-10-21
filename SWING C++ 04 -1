@@ -1,0 +1,67 @@
+#include <iostream>
+
+using namespace std;
+
+class Box
+{
+private:
+	char f;
+	int width = 0;
+	int height = 0;
+
+public:
+
+	void setFil(char f)
+	{
+		if (f)
+			cin >> f;
+	}
+
+	void setSize(int width, int height)
+	{
+		cin >> width;
+		cin >> height;
+	}
+
+	void draw()
+	{
+		for (int i = 0; i < height; i++)
+		{
+			for (int j = 0; j < width; j++)
+			{
+				cout << f;
+			}
+			cout << endl;
+		}
+	}
+
+	Box(int w, int h)
+	{
+		width = w;
+		height = h;
+		f = '*';
+	}
+
+	Box(int w, int h, char a)
+	{
+		width = w;
+		height = h;
+		f = a;
+	}
+};
+
+
+int main(void)
+{
+	Box box1(3, 4);
+	box1.setFil('*');
+	box1.setSize(3, 4);
+	box1.draw();
+
+	Box box2(6, 10,'^');
+	box2.setFil('^');
+	box2.setSize(6, 10);
+	box2.draw();
+
+	return 0;
+}
